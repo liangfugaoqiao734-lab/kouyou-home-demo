@@ -1,0 +1,199 @@
+
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>向陽ホーム｜LIXILトイレ概算見積デモ</title>
+<style>
+:root{
+  --blue:#075aa8; --green:#21a366; --red:#c62828;
+  --bg:#eef3f8; --line:#d9e3ee; --text:#17212b; --muted:#637282;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;
+}
+.app{max-width:480px;min-height:100vh;margin:auto;background:#fff;box-shadow:0 0 30px rgba(0,0,0,.08)}
+header{padding:22px 20px;background:linear-gradient(135deg,#075aa8,#0878c9);color:#fff}
+header h1{font-size:22px;margin:0 0 6px}
+header p{font-size:13px;margin:0;opacity:.9}
+.notice{padding:10px 16px;background:#fff7dd;color:#655118;font-size:12px;border-bottom:1px solid #f0df9d}
+.screen{
+  min-height:calc(100vh - 116px);padding:20px;display:none;
+  animation:fade .18s ease-out;
+}
+#start{display:block}
+.screen:target{display:block}
+.screen:target ~ #start{display:none}
+@keyframes fade{from{opacity:.2;transform:translateY(5px)}to{opacity:1;transform:none}}
+.step{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:.04em}
+h2{font-size:23px;margin:8px 0 6px}
+.lead{font-size:14px;color:var(--muted);line-height:1.7;margin:0 0 18px}
+.cards{display:grid;gap:12px}
+.card{
+  display:block;text-decoration:none;color:inherit;border:2px solid var(--line);
+  border-radius:16px;padding:17px;background:#fff;box-shadow:0 3px 10px rgba(29,59,91,.05);
+  -webkit-tap-highlight-color:transparent;
+}
+.card:active{transform:scale(.985);border-color:var(--blue)}
+.card strong{display:block;font-size:18px;margin-bottom:5px}
+.card small{display:block;color:var(--muted);line-height:1.55}
+.badge{display:inline-block;font-size:11px;font-weight:700;border-radius:999px;padding:4px 8px;margin-bottom:8px;background:#eaf4ff;color:var(--blue)}
+.badge.pop{background:#fff2cc;color:#805e00}
+.badge.high{background:#ffe5e5;color:#9c1c1c}
+.actions{display:grid;gap:10px;margin-top:18px}
+.btn{
+  display:block;text-align:center;text-decoration:none;border-radius:13px;padding:15px 14px;
+  font-weight:700;background:var(--blue);color:#fff;-webkit-tap-highlight-color:transparent;
+}
+.btn.secondary{background:#edf3f8;color:#284154}
+.btn.green{background:var(--green)}
+.checks{display:grid;gap:10px}
+.check{
+  border:1px solid var(--line);border-radius:13px;padding:14px;display:flex;gap:10px;align-items:center;
+}
+.check input{width:20px;height:20px}
+.result{
+  border:2px solid var(--blue);border-radius:17px;padding:18px;background:#f7fbff;
+}
+.result h3{margin:0 0 5px;font-size:20px}
+.price{font-size:29px;font-weight:800;color:var(--red);margin:13px 0 5px}
+.meta{font-size:13px;color:var(--muted);line-height:1.7}
+.includes{font-size:13px;line-height:1.9;padding-left:18px}
+.progress{height:7px;background:#dce5ee;border-radius:999px;overflow:hidden;margin:14px 0 20px}
+.progress span{display:block;height:100%;background:var(--green)}
+.note{font-size:11px;color:#6f7a85;line-height:1.7;margin-top:15px}
+</style>
+</head>
+<body>
+<main class="app">
+<header>
+  <h1>向陽ホーム AI概算見積</h1>
+  <p>LIXIL トイレ交換シミュレーター｜操作デモ</p>
+</header>
+<div class="notice">JavaScriptを使わず、タップ操作だけで画面が切り替わる版です。</div>
+
+<section class="screen" id="grade">
+  <div class="step">STEP 1 / 5</div>
+  <div class="progress"><span style="width:20%"></span></div>
+  <h2>グレードを選択</h2>
+  <p class="lead">ご希望に近い価格帯・機能をお選びください。</p>
+  <div class="cards">
+    <a class="card" href="#basic">
+      <span class="badge">価格重視</span>
+      <strong>ベーシック</strong>
+      <small>ベーシア・アメージュを中心とした、費用を抑えやすいプラン。</small>
+    </a>
+    <a class="card" href="#standard">
+      <span class="badge pop">バランス重視</span>
+      <strong>スタンダード</strong>
+      <small>ベーシックとハイグレードの中間。機能・清掃性・価格のバランス型。</small>
+    </a>
+    <a class="card" href="#high">
+      <span class="badge high">上位モデル</span>
+      <strong>ハイグレード</strong>
+      <small>サティスXを想定。デザイン性・快適性・清掃性を重視。</small>
+    </a>
+  </div>
+</section>
+
+<section class="screen" id="basic">
+  <div class="step">STEP 2 / 5</div>
+  <div class="progress"><span style="width:40%"></span></div>
+  <h2>ベーシック商品</h2>
+  <p class="lead">商品タイプを選択してください。</p>
+  <div class="cards">
+    <a class="card" href="#housing"><strong>ベーシア｜タンク付き</strong><small>一般的なタンク付きタイプ。</small></a>
+    <a class="card" href="#housing"><strong>ベーシア｜タンクなし</strong><small>すっきりした見た目を重視。</small></a>
+    <a class="card" href="#housing"><strong>アメージュ｜リトイレ</strong><small>既存配管への対応を想定したリフォーム向け。</small></a>
+  </div>
+  <div class="actions"><a class="btn secondary" href="#grade">戻る</a></div>
+</section>
+
+<section class="screen" id="standard">
+  <div class="step">STEP 2 / 5</div>
+  <div class="progress"><span style="width:40%"></span></div>
+  <h2>スタンダード商品</h2>
+  <p class="lead">現時点では仮の商品枠です。社内採用商品を後から設定できます。</p>
+  <div class="cards">
+    <a class="card" href="#housing"><strong>スタンダードA</strong><small>価格と機能のバランスを重視した主力候補。</small></a>
+    <a class="card" href="#housing"><strong>スタンダードB</strong><small>清掃性・収納性などを付加した候補。</small></a>
+  </div>
+  <div class="actions"><a class="btn secondary" href="#grade">戻る</a></div>
+</section>
+
+<section class="screen" id="high">
+  <div class="step">STEP 2 / 5</div>
+  <div class="progress"><span style="width:40%"></span></div>
+  <h2>ハイグレード商品</h2>
+  <p class="lead">上位モデルを選択してください。</p>
+  <div class="cards">
+    <a class="card" href="#housing"><strong>サティスX</strong><small>デザイン・清掃性・快適機能を重視した上位プラン。</small></a>
+  </div>
+  <div class="actions"><a class="btn secondary" href="#grade">戻る</a></div>
+</section>
+
+<section class="screen" id="housing">
+  <div class="step">STEP 3 / 5</div>
+  <div class="progress"><span style="width:60%"></span></div>
+  <h2>住宅タイプ</h2>
+  <p class="lead">現在のお住まいを選択してください。</p>
+  <div class="cards">
+    <a class="card" href="#interior"><strong>🏠 戸建て</strong><small>木造住宅など。</small></a>
+    <a class="card" href="#interior"><strong>🏢 マンション</strong><small>管理規約や搬入条件を確認します。</small></a>
+  </div>
+</section>
+
+<section class="screen" id="interior">
+  <div class="step">STEP 4 / 5</div>
+  <div class="progress"><span style="width:80%"></span></div>
+  <h2>内装・付帯工事</h2>
+  <p class="lead">希望する項目にチェックしてください。デモ版では最終金額への反映はまだ行いません。</p>
+  <div class="checks">
+    <label class="check"><input type="checkbox">床（クッションフロア）張替え</label>
+    <label class="check"><input type="checkbox">壁クロス張替え</label>
+    <label class="check"><input type="checkbox">天井クロス張替え</label>
+    <label class="check"><input type="checkbox">紙巻器交換</label>
+    <label class="check"><input type="checkbox">タオル掛け交換</label>
+    <label class="check"><input type="checkbox">手すり取付</label>
+  </div>
+  <div class="actions"><a class="btn" href="#result">概算結果を見る</a></div>
+</section>
+
+<section class="screen" id="result">
+  <div class="step">STEP 5 / 5</div>
+  <div class="progress"><span style="width:100%"></span></div>
+  <h2>概算結果</h2>
+  <div class="result">
+    <h3>LIXIL トイレ交換プラン</h3>
+    <div class="price">198,000〜228,000円</div>
+    <div class="meta">税込・標準施工を想定／工期目安：約1日</div>
+    <ul class="includes">
+      <li>商品代</li><li>既存便器の撤去・処分</li><li>標準取付工事</li><li>試運転・動作確認</li>
+    </ul>
+  </div>
+  <p class="note">本画面は操作確認用のデモです。正式運用時は商品別売価、内装費、配管・電気・搬入等の追加条件を設定し、選択内容に応じて価格を自動計算します。</p>
+  <div class="actions">
+    <a class="btn green" href="tel:0000000000">電話で相談する</a>
+    <a class="btn" href="mailto:example@example.com?subject=LIXILトイレ概算見積の相談">メールで相談する</a>
+    <a class="btn secondary" href="#grade">最初からやり直す</a>
+  </div>
+</section>
+
+<section class="screen" id="start">
+  <div class="step">START</div>
+  <div class="progress"><span style="width:5%"></span></div>
+  <h2>LIXILトイレ交換の概算を確認</h2>
+  <p class="lead">質問にタップで回答すると、概算価格のイメージを確認できます。</p>
+  <div class="result">
+    <h3>約1分で完了</h3>
+    <div class="meta">商品グレード、住宅タイプ、内装工事などを選択します。</div>
+  </div>
+  <div class="actions"><a class="btn" href="#grade">見積をスタート</a></div>
+</section>
+</main>
+</body>
+</html>
